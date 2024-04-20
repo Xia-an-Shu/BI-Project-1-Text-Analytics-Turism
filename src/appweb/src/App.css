@@ -324,6 +324,9 @@ nav button {
 
 .review-prediction {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .review-text, .review-prediction {
@@ -366,4 +369,8 @@ nav button {
   background-color: #0015d16a;
   color: white;
   font-weight: bold;
+}
+
+.review-prediction img{
+  width: 100%;
 }
