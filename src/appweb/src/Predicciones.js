@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import Reviews from './Reviews';
 
 function Predicciones() {
 
@@ -70,23 +71,15 @@ function Predicciones() {
                 <button onClick={() => navigate('predecir')}>Predicción</button>
                 <button onClick={() => navigate('csv')}>Predicciones</button>
             </nav>
-            <h2>Predicciones para múltiples revisiones</h2>
-            <input type="file" accept=".csv" onChange={handleFileChange} />
-            <button onClick={() => {handleFileUpload(); cambiarCargando();}}>Enviar archivo</button>
-            <h2>{cargando}</h2>
-            {/* Mostrar revisiones y predicciones */}
+            <div className="texto_predicciones">
+                <h2>Calcular Nivel de Satisfacción</h2>
+                <input type="file" accept=".csv" onChange={handleFileChange} />
+                <button onClick={() => {handleFileUpload(); cambiarCargando();}}>Enviar archivo</button>
+                <h2>{cargando}</h2>
+            </div>
+
             {results.length > 0 && (
-                <div>
-                    <h3>Resultados:</h3>
-                    <ul>
-                        {results.map((result, index) => (
-                            <li key={index}>
-                                <strong>Revisión:</strong> {result.review}<br />
-                                <strong>Predicción:</strong> {result.prediction}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                <Reviews results={results} />
             )}
         </div>
     );
