@@ -16,7 +16,7 @@ function App() {
 
           <Route path="/predecir" element={<Predecir />}/>
           
-          <Route path="/predecircsv" element={<Predicciones />}/>
+          <Route path="/predicciones" element={<Predicciones />}/>
         
         </Routes>
       </div>

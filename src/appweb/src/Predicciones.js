@@ -25,7 +25,7 @@ function Predicciones() {
           navigation('/predecir')
       }
       else{
-          navigation('/predecircsv')
+          navigation('/predicciones')
       }
     }
 
