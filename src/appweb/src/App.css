@@ -129,7 +129,7 @@ nav {
 nav button {
   border-radius: 10px;
   width: 12%;
-  background-color: #ffffff1b;
+  background-color: #6c80ff7c;
   border: none;
   color: white;
   padding: 10px 20px;
@@ -144,7 +144,7 @@ nav button {
 
 /* Estilos para los botones al pasar el mouse */
 nav button:hover {
-  background-color: #ffffff61;
+  background-color: #6c80ff;
 }
 
 /* Estilos específicos para los botones en la barra de navegación */

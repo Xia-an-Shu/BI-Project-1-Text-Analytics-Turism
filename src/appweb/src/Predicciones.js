@@ -1,10 +1,33 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 function Predicciones() {
 
     const [csvFile, setCsvFile] = useState(null);
     const [results, setResults] = useState([]);
+    const [cargando, setCargando] = useState('')
+
+    const cambiarCargando = () =>{
+        if (!csvFile) {
+            return;
+        }
+        setCargando('Cargando...')
+    }
+
+    const navigation = useNavigate() 
+
+    const navigate = (pagina) => {
+      if (pagina === 'inicio'){
+          navigation('/home')
+      }
+      else if (pagina === 'predecir'){
+          navigation('/predecir')
+      }
+      else{
+          navigation('/predecircsv')
+      }
+    }
 
     // Manejador de eventos para el cambio de archivo
     const handleFileChange = (event) => {
@@ -33,6 +56,7 @@ function Predicciones() {
 
             // Almacenar las revisiones y predicciones recibidas en el estado
             setResults(response.data.results);
+            setCargando('')
         } catch (error) {
             console.error('Error al hacer la solicitud a la API:', error);
             alert('Hubo un error al hacer la solicitud a la API.');
@@ -41,10 +65,15 @@ function Predicciones() {
 
     return (
         <div>
+            <nav>
+                <button onClick={() => navigate('inicio')}>Inicio</button>
+                <button onClick={() => navigate('predecir')}>Predicción</button>
+                <button onClick={() => navigate('csv')}>Predicciones</button>
+            </nav>
             <h2>Predicciones para múltiples revisiones</h2>
             <input type="file" accept=".csv" onChange={handleFileChange} />
-            <button onClick={handleFileUpload}>Enviar archivo</button>
-
+            <button onClick={() => {handleFileUpload(); cambiarCargando();}}>Enviar archivo</button>
+            <h2>{cargando}</h2>
             {/* Mostrar revisiones y predicciones */}
             {results.length > 0 && (
                 <div>

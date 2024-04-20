@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import PagPrincipal from './PagPrincipal';
 import Predecir from './Predecir';
+import Predicciones from './Predicciones';
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
 
           <Route path="/predecir" element={<Predecir />}/>
           
-
+          <Route path="/predecircsv" element={<Predicciones />}/>
         
         </Routes>
       </div>

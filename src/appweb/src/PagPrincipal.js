@@ -17,7 +17,7 @@ function PaginaPrincipal() {
         navigation('/predecir')
     }
     else{
-        navigation('/predecir')
+        navigation('/predecircsv')
     }
   }
 
