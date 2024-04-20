@@ -302,7 +302,6 @@ nav button {
 .review-item2 {
   display: grid;
   grid-template-columns: 4fr 1fr;
-  padding: 10px 25px;
   border-bottom: 1px solid #ccc;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.8);
@@ -315,13 +314,22 @@ nav button {
 .review-item {
   display: grid;
   grid-template-columns: 4fr 1fr;
-  padding: 10px 25px;
+  /* padding: 10px 25px; */
   border-bottom: 1px solid #ccc;
 }
 
+.review-text {
+  border-right: 2px solid #ffffff;
+}
+
+.review-prediction {
+  text-align: center;
+}
+
 .review-text, .review-prediction {
-  /* Estilo para las columnas de reseña y predicción */
-  padding: 5px;
+  padding: 15px;
+  padding-right: 25px;
+  padding-left: 25px;
   color: white;
   font-family: "Jost", sans-serif;
 }
