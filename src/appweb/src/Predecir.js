@@ -72,8 +72,8 @@ function Predecir() {
     <div>
     <nav>
     <button onClick={() => navigate('inicio')}>Inicio</button>
-    <button onClick={() => navigate('predecir')}>Predecir</button>
-    <button onClick={() => navigate('csv')}>CSV</button>
+    <button onClick={() => navigate('predecir')}>Predicción</button>
+    <button onClick={() => navigate('csv')}>Predicciones</button>
   </nav>
     <div className="Contenedor-Principal">
       <div className="Contenedor-Banner">

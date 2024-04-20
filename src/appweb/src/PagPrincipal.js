@@ -25,8 +25,8 @@ function PaginaPrincipal() {
     <div className="PagPrincipal">
         <nav>
         <button onClick={() => navigate('inicio')}>Inicio</button>
-        <button onClick={() => navigate('predecir')}>Predecir</button>
-        <button onClick={() => navigate('csv')}>CSV</button>
+        <button onClick={() => navigate('predecir')}>Predicción</button>
+        <button onClick={() => navigate('csv')}>Predicciones</button>
       </nav>
        <div className="PagPrincipalInformación">
        <h1>Bienvenido a Turismo de los Alpes</h1>
